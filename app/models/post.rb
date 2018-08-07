@@ -6,9 +6,9 @@ class Post < ActiveRecord::Base
   validate :is_the_title_clickbait?
 
   def is_the_title_clickbait?
-  clickbait_content = ["Won't Believe", "Secret", "Top[0-10]", "Guess"]
+  clickbait_criteria = ["Won't Believe", "Secret", "Top[0-10]", "Guess"]
 
-    if clickbait_content.include?(title)
+    if clickbait_criteria.include?(title)
       true
     else
       errors.add(:title, "The title must be clickbait.")
